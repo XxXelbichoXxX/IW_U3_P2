@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
+import { FavoriteService } from '../services/favorite.service';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +14,7 @@ export class Tab1Page {
   public selectedCategory: string = 'all';
 
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private favoriteService: FavoriteService) {
     this.products.push({
       name: 'Coca Cola',
       price: 20,
@@ -51,6 +52,9 @@ export class Tab1Page {
   }
   addToCart(product: Product) {
     this.cartService.addToCart(product);
+  }
+  addToFav(product: Product) {
+    this.favoriteService.addToFav(product);
   }
   public filterProducts() {
     if (this.selectedCategory === 'all') {

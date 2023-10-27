@@ -5,4 +5,5 @@ export interface Product{
     type: string;
     photo: string;
     style: string;
+    status?: boolean;
 }

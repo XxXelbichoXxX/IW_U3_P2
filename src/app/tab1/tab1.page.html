@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Productos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -35,6 +35,9 @@
           </ion-card-content>
           <ion-button (click)= "addToCart(product)">
             <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+          </ion-button>
+          <ion-button style="--background: red;" (click)="addToFav(product)">
+            <ion-icon name="heart-outline"></ion-icon>
           </ion-button>
         </ion-card>
       </ion-col>
